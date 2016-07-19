@@ -1,0 +1,27 @@
+{
+  "name": "broccoli-version",
+  "version": "0.1.0",
+  "description": "Broccoli plugin for incrementing version numbers in .json files",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha test/specs"
+  },
+  "repository": "https://github.com/stfsy/broccoli-version.git",
+  "keywords": [
+    "broccoli-plugin"
+  ],
+  "author": "Stefan Pfaffel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stfsy/broccoli-version/issues"
+  },
+  "homepage": "https://github.com/stfsy/broccoli-version#readme",
+  "dependencies": {
+    "broccoli-plugin": "^1.2.1",
+    "fs-promise": "^0.5.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}
