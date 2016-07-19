@@ -19,6 +19,11 @@ describe('Version', () => {
         expect(version.toString()).to.equal(semver)
     })
 
+    it('should not increment the patch level', () => {
+
+        expect(version.patch(undefined).toString()).to.equal('0.0.1')
+    })
+
     it('should increment the patch level', () => {
 
         expect(version.patch().toString()).to.equal('0.0.2')
@@ -39,6 +44,11 @@ describe('Version', () => {
         expect(version.patch(true).minor(false).major(false).toString()).to.equal('0.0.2')
     })
 
+    it('should not increment the minor level', () => {
+
+        expect(version.minor(undefined).toString()).to.equal('0.0.1')
+    })
+
     it('should increment the minor level', () => {
 
         expect(version.minor().toString()).to.equal('0.1.0')
@@ -57,6 +67,11 @@ describe('Version', () => {
     it('should increment the minor level', () => {
 
         expect(version.patch(false).minor(true).major(false).toString()).to.equal('0.1.0')
+    })
+
+    it('should not increment the major level', () => {
+
+        expect(version.major(undefined).toString()).to.equal('0.0.1')
     })
 
     it('should increment the major level', () => {
