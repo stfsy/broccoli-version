@@ -5,24 +5,24 @@ Broccoli plugin for incrementing version numbers in bower.json and package.json 
 ## Example 
 
 ```js
-    const BroccoliVersion = require('broccoli-version')
+const BroccoliVersion = require('broccoli-version')
 
-    const versioned = new BroccoliVersion('app', {
-        major: false,
-        minor: false,
-        patch: true,
-        targets: {
-            npm: true,
-            bower: false
-        }
-    })
+const versioned = new BroccoliVersion('app', {
+    major: false,
+    minor: false,
+    patch: true,
+    targets: {
+        npm: true,
+        bower: false
+    }
+})
 
-    module.exports = versioned
+module.exports = versioned
 ```
 
 ## Installation
 ```js
-npm install stfsy/broccoli-version --save-dev
+npm install broccoli-version --save-dev
 ```
 
 ## Documentation
