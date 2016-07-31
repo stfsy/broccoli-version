@@ -1,6 +1,6 @@
 'use strict'
 
-const Version = require('../../lib/Version')
+const Version = require('../../lib/version')
 const expect = require('chai').expect
 
 describe('Version', () => {
