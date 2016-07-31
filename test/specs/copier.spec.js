@@ -1,6 +1,6 @@
 'use strict'
 
-const Copier = require('../../lib/Copier')
+const Copier = require('../../lib/copier')
 
 const expect = require('chai').expect
 const resolve = require('path').resolve
