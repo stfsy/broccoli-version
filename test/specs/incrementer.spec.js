@@ -1,6 +1,6 @@
 'use strict'
 
-const Incrementer = require('../../lib/Incrementer')
+const Incrementer = require('../../lib/incrementer')
 
 const expect = require('chai').expect
 const resolve = require('path').resolve
