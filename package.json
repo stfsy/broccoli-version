@@ -6,11 +6,12 @@
   "scripts": {
     "test": "mocha test/specs",
     "preversion": "npm test",
-    "postversion": "npm run changelog && git add CHANGELOG.md && git push && git push --tags",
+    "version": "npm run changelog && git add -A CHANGELOG.md",
+    "postversion": "git push && git push --tags",
     "release-major": "npm version major -m \"chore(release): v%s\"",
     "release-minor": "npm version minor -m \"chore(release): v%s\"",
     "release-patch": "npm version patch -m \"chore(release): v%s\"",
-    "changelog": "standard-changelog -i CHANGELOG.md -w -r 0"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "repository": {
     "type": "git",
@@ -32,7 +33,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-spies": "^0.7.1",
-    "mocha": "^2.5.3",
-    "standard-changelog": "0.0.1"
+    "conventional-changelog": "^1.1.0",
+    "mocha": "^2.5.3"
   }
 }
