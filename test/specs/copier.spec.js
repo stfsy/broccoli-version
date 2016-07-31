@@ -11,14 +11,6 @@ describe('Copier', () => {
 
     let copier = null
 
-    console.log(process.cwd())
-    console.log(resolve('test'))
-
-    fileSystem.readdir(resolve('test')).then((contents) => {
-
-        console.log(contents)
-    })
-
     beforeEach(() => {
 
         copier = new Copier()
@@ -26,36 +18,21 @@ describe('Copier', () => {
 
     it('should copy files to another directory', (done) => {
 
-       let testContentsLength = null
+        let testContentsLength = null
 
-       fileSystem.mkdirs(resolve('.tmp')).then(()=> {
+        fileSystem.mkdirs(resolve('.tmp')).then(() => {
 
-           return fileSystem.readdir(resolve('test'))
+            testContentsLength = fileSystem.readdirSync(resolve('test')).length
 
-       }).then((contents) => {
+            return copier.copyDirs([resolve('test')], resolve('.tmp'))
 
-          testContentsLength = contents.length
+        }).then(() => {
 
-       }).then(() => {
+            const contentsLength = fileSystem.readdirSync(resolve('.tmp')).length
 
-         return copier.copy(resolve('test'),resolve('.tmp'))
+            expect(contentsLength).to.equal(testContentsLength)
+            return fileSystem.remove(resolve('.tmp'))
 
-       }).then(() => {
-
-          return fileSystem.readdir(resolve('.tmp')) 
-
-       }).then((contents) => {
-
-          expect(contents.length).to.equal(testContentsLength)
-          done()
-
-       }).catch((error) => {
-
-           done(error)
-           
-       }).then(() => {
-
-           fileSystem.remove(resolve('.tmp'))
-       })
+        }).then(done, done)
     })
 })
