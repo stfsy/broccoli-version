@@ -11,7 +11,7 @@
 
 Broccoli plugin for incrementing version numbers in bower.json and package.json files
 
-## Example 
+## Example
 
 ```js
 const BroccoliVersion = require('broccoli-version')
@@ -20,6 +20,40 @@ const versioned = new BroccoliVersion('app', {
     major: false,
     minor: false,
     patch: true,
+    meta: (options) => {
+        if(!options.major && !options.minor && !options.patch) {
+            return options.meta += 1
+        } else {
+            return 0
+        }
+    }
+    targets: {
+        npm: true,
+        bower: false
+    }
+})
+
+module.exports = versioned
+```
+
+## Example incrementing daily builds
+
+```js
+const BroccoliVersion = require('broccoli-version')
+
+const versioned = new BroccoliVersion('app', {
+    meta: (options) => {
+        let builds = 0
+            
+        const now = new Date()
+        const string = [now.getFullYear(), now.getMonth() + 1, now.getDay()].join('')
+
+        if (options.meta && options.meta.indexOf(string) > -1) {
+            builds = parseInt(options.meta.split('-')[1])
+        }
+
+        return [string, ++builds].join('-')
+    },
     targets: {
         npm: true,
         bower: false
@@ -44,7 +78,9 @@ npm install broccoli-version --save-dev
 
     * `major`, `minor`, `patch`: Boolean flags specifying what parts of the version number should be incremented.
 
-    * `targets`: An object specifying what configuration files should be updated.
+    * `meta`: An optional function returning additional build metadata. The function is called with the three boolean flags mentioned above plus the current value of the build meta data or null. Build meta data is appended to the version with a leading '+'.
+
+    * `targets`: An object specifying what configuration files should be updated. Needs at least npm set to true.
 
 The returned output node contains umodified copies of all files and subfolders of the input nodes.
 
