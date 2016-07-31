@@ -35,4 +35,31 @@ describe('Copier', () => {
 
         }).then(done, done)
     })
+
+    it('should copy files of multiple directories to another directory', (done) => {
+
+        let testContentsLength = null
+
+        fileSystem.mkdirs(resolve('.tmp')).then(() => {
+
+            const testFiles = fileSystem.readdirSync(resolve('test')).length
+            const libFiles = fileSystem.readdirSync(resolve('lib')).length
+
+            console.log(testFiles)
+
+            testContentsLength = testFiles + libFiles
+
+        }).then(() => {
+
+            return copier.copyDirs([resolve('test'), resolve('lib')], resolve('.tmp'))
+
+        }).then(() => {
+
+            const tmpLength = fileSystem.readdirSync(resolve('.tmp')).length
+            expect(tmpLength).to.equal(testContentsLength)
+
+            return fileSystem.remove(resolve('.tmp'))
+
+        }).then(done, done)
+    })
 })
