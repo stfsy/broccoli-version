@@ -6,10 +6,11 @@
   "scripts": {
     "test": "mocha test/specs",
     "preversion": "npm test",
-    "postversion": "git push && git push --tags",
-    "release-major": "changelog -M && npm version major -m \"chore(release): v%s\"",
-    "release-minor": "changelog -m && npm version minor -m \"chore(release): v%s\"",
-    "release-patch": "changelog -p && npm version patch -m \"chore(release): v%s\""
+    "postversion": "npm run changelog && git add CHANGELOG.md && git push && git push --tags",
+    "release-major": "npm version major -m \"chore(release): v%s\"",
+    "release-minor": "npm version minor -m \"chore(release): v%s\"",
+    "release-patch": "npm version patch -m \"chore(release): v%s\"",
+    "changelog": "standard-changelog -i CHANGELOG.md -w -r 0"
   },
   "repository": {
     "type": "git",
@@ -31,7 +32,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-spies": "^0.7.1",
-    "generate-changelog": "^1.0.2",
-    "mocha": "^2.5.3"
+    "mocha": "^2.5.3",
+    "standard-changelog": "0.0.1"
   }
 }
