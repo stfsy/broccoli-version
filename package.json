@@ -4,7 +4,7 @@
   "description": "Broccoli plugin for incrementing version numbers in .json files",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha test/specs",
+    "test": "mocha test/specs --timeout 20000",
     "preversion": "npm test",
     "version": "npm run changelog && git add -A CHANGELOG.md",
     "postversion": "git push && git push --tags",
