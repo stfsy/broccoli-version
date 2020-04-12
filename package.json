@@ -27,9 +27,7 @@
   },
   "homepage": "https://github.com/stfsy/broccoli-version#readme",
   "dependencies": {
-    "broccoli-plugin": "^1.2.1",
     "broccoli-plugin-adapter": "^1.0.0",
-    "fs-promise": "^0.5.0"
   },
   "devDependencies": {
     "broccoli-cli": "^1.0.0",
