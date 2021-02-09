@@ -1,11 +1,29 @@
-# [1.0.0](https://github.com/stfsy/broccoli-version/compare/v0.2.1...v1.0.0) (2020-04-12)
+# [1.1.0](https://github.com/stfsy/broccoli-version/compare/v1.0.0...v1.1.0) (2021-02-09)
+
+
+### Features
+
+* update outdated dependencies ([6eefeb8](https://github.com/stfsy/broccoli-version/commit/6eefeb8781046995f95f0b4e360c51287d34d9a0))
+* update vulnerable dependencies ([7ef148c](https://github.com/stfsy/broccoli-version/commit/7ef148ca19658079301325dd999b86b90a71cdba))
+
+
+
+# [1.0.0](https://github.com/stfsy/broccoli-version/compare/v0.3.0...v1.0.0) (2020-04-12)
+
+
+### Features
+
+* use broccoli plugin adapter ([ab89826](https://github.com/stfsy/broccoli-version/commit/ab8982642b56aa05185fa161b11d451b025e2d73))
+* use broccoli plugin adapter ([52f359f](https://github.com/stfsy/broccoli-version/commit/52f359f621772a8467d88ab8da18be2ea51940da))
+
+
+
+# [0.3.0](https://github.com/stfsy/broccoli-version/compare/v0.2.1...v0.3.0) (2020-03-22)
 
 
 ### Features
 
 * update dependencies ([b5f9e50](https://github.com/stfsy/broccoli-version/commit/b5f9e509afeeeef52dedf804ac4fba92607f5a43))
-* use broccoli plugin adapter ([ab89826](https://github.com/stfsy/broccoli-version/commit/ab8982642b56aa05185fa161b11d451b025e2d73))
-* use broccoli plugin adapter ([52f359f](https://github.com/stfsy/broccoli-version/commit/52f359f621772a8467d88ab8da18be2ea51940da))
 
 
 
