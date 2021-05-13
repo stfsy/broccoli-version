@@ -1,3 +1,13 @@
+# [1.2.0](https://github.com/stfsy/broccoli-version/compare/v1.1.0...v1.2.0) (2021-05-13)
+
+
+### Features
+
+* update outdated dependencies ([51595f5](https://github.com/stfsy/broccoli-version/commit/51595f5e263c7f538119b718b9d78fba5c400282))
+* update vulnerable dependencies ([582bfb6](https://github.com/stfsy/broccoli-version/commit/582bfb6f1b80da62258188ba0568eaf3a67ce618))
+
+
+
 # [1.1.0](https://github.com/stfsy/broccoli-version/compare/v1.0.0...v1.1.0) (2021-02-09)
 
 
